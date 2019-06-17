@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+    
+    <section id="container">
+        <div id="box"></div>
+        <div id="steps"></div>
+        <div id="button"></div>
+    </section>
+   
+    <script>
+        var box = document.querySelector('#box')
+        var steps = document.querySelector('#steps')
+        var button = document.querySelector('#button')
+
+        var htmlstr = ''
+
+        fetch('./config.json')
+            .then(function (response) {
+                return response.json()
+            }).then(function (data) {
+                console.log(data);
+
+                htmlstr =
+                `  <img id='xbutton' src="assets/closebutton.png" />
+                    <h1 id='title'>${data.title}</h1>
+                    <p id='subtitle'>${data.subtitle}</p>
+                    <div id="line"></div>
+                    <h1 id='instructions'>${data.instructions.title + ":"}</h1>
+
+                `
+
+                htmlstr2 = data.instructions.steps.map(item => (
+                ` 
+                    <div class="step">
+                        <img class="numbers" src=${item.number}>
+                        <p id="steps">${item.text}</p>
+                        <img class="screenshots" src=${item.graphic} />
+                    </div>
+                `
+                )).join('')
+
+                htmlstr3 =
+                ` <button id="bt">${data.startButton}</button>`
+
+            box.innerHTML = htmlstr
+            steps.innerHTML = htmlstr2
+            button.innerHTML = htmlstr3
+
+            })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{
+    "title": "AUGMENTED REALITY QUICK GUIDE",
+    "subtitle": "Augmented Reality allows you to visualize the product you're looking at in your real environment through your device's camera.",
+    "instructions": {
+        "title": "IT'S EASY",
+        "steps": [
+            {
+                "number": "assets/1.jpg",
+                "text": "On the next page tap AR to open your camera.",
+                "graphic": "assets/instruction1.jpg"
+            },
+            {
+                "number": "assets/2.jpg",
+                "text": "Point your camera where you'd like to place the item.",
+                "graphic": "assets/instruction2.jpg"
+            },
+            {
+                "number": "assets/3.jpg",
+                "text": "Item will appear true-to-size. Drag into position.",
+                "graphic": "assets/instruction3.jpg"
+            }
+        ]
+    },
+    "startButton": "Get Started"
+}
